@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  background-color: rgba(129, 129, 129, 0.5);
+  color: #807b7d;
+  font-family: sans-serif;
+}
+
+input {
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+select {
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+#main-container {
+  width: 60%;
+  margin: 10px auto;
+  background-color: white;
+}
+
+h1 {
+  padding-top: 20px;
+}
+
+.centering {
+  text-align: center;
+}
+
+#task-form > div {
+  border: none;
+  border-radius: 5px;
+  border-top: 1px solid lightgrey;
+  padding: 10px;
+  font-size: 12px;
+}
+
+#task-form > div label {
+  display: block;
+}
+
+#task-input {
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 15px;
+  padding: 5px;
+}
+
+div label {
+  margin-bottom: 5px;
+}
+
+#desc-container:hover,
+#desc-container:hover input,
+#add-info > div:hover,
+#add-info > div:hover input,
+#add-info > div:hover select {
+  background-color: lightgrey;
+}
+
+#task-form > #add-info {
+  display: flex;
+}
+
+#add-info > div {
+  flex: 1;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+#add-info > div:first-child {
+  border-right: 1px solid lightgrey;
+}
+
+#task-form button {
+  padding: 10px;
+  outline: none;
+  border: none;
+  background-color: orangered;
+  font-weight: 600;
+}
+
+#del-btn {
+  background-color: lightgrey !important;
+}
+
+/* Styling checkboxex*/
+input[type="checkbox"] {
+  transform: scale(1.5);
+}
+
+input[type="checkbox"]:checked {
+  content: "\2713";
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 15px;
+  color: #f3f3f3;
+  text-align: center;
+  line-height: 15px;
+}
+
+.tb-margin {
+  border-top: 1px solid lightgrey;
+  padding: 20px;
+}
+
+.tb-margin label {
+  margin-left: 20px;
+}
+
+.btn-txt {
+  margin-left: 5px;
+}

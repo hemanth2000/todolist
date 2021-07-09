@@ -7,6 +7,7 @@ const db = require("./config/mongoose");
 const app = express();
 
 //2) MIDDLEWARES
+app.use(express.urlencoded({ extended: true }));
 app.use("/", router);
 app.use(express.static("assests"));
 

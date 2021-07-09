@@ -1,9 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script
+      src="https://kit.fontawesome.com/15f8d4d2f4.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/home.css" />
     <title><%= title%></title>
   </head>
   <body>
-    <h1>Homepage of To-Do List</h1>
+    <div id="main-container">
+      <h1 class="centering">Todo App</h1>
+      <form id="task-form" action="/create" method="POST">
+        <div id="desc-container">
+          <label for="task-input">DESCRIPTION</label>
+          <input
+            id="task-input"
+            type="text"
+            placeholder="What do you need to do?"
+            required
+            name="name"
+          />
+        </div>
+        <div id="add-info">
+          <div>
+            <label for="tags">CATEGORY</label>
+            <select name="tag" id="tags">
+              <option value="" selected>Choose a category</option>
+              <option value="office">Office</option>
+              <option value="school">School</option>
+              <option value="personal">Family</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="due-time">DUE DATE</label>
+            <input id="due-time" name="dueDate" type="date" />
+          </div>
+        </div>
+
+        <div class="centering">
+          <button type="submit">
+            <i class="fas fa-tasks"></i> <span class="btn-txt">ADD TASK</span>
+          </button>
+
+          <button type="button" id="del-btn">
+            <span><i class="fas fa-trash-alt"></i></span>
+            <span class="btn-txt"> DELETE TASKS</span>
+          </button>
+        </div>
+      </form>
+
+      <div class="tasks-container">
+        <form id="pendingtasks" method="POST">
+          <%var i=0%> <% for(const task of pendingtasks){%> <%id="v"+i%>
+          <div class="tb-margin">
+            <input
+              type="checkbox"
+              id="<%= id%>"
+              name="<%= id%>"
+              value="<%=task._id%>"
+            />
+            <label for="<%= id%>"><%= task.name%></label>
+          </div>
+          <% i++%> <%}%>
+        </form>
+      </div>
+    </div>
+    <script src="js/home.js"></script>
   </body>
 </html>
